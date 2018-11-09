@@ -1,22 +1,17 @@
 package apps.softtek.com.turisteando.fragment
 
+import android.animation.LayoutTransition
 import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Destination
+import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.DestinationAdapter
-import android.view.animation.AccelerateDecelerateInterpolator
-import androidx.constraintlayout.widget.ConstraintSet
-import android.R.attr.order
-import android.animation.ObjectAnimator
-import androidx.transition.ChangeBounds
-import androidx.transition.TransitionManager
-import kotlinx.android.synthetic.main.destination_item.*
-import kotlinx.android.synthetic.main.fragment_destination.*
 
 
 class DestinationFragment : Fragment() {
@@ -30,7 +25,7 @@ class DestinationFragment : Fragment() {
 
     }
 
-    val destinations = ArrayList<Destination>()
+    private val destinations = ArrayList<Destination>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,33 +86,22 @@ class DestinationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //getting recyclerview from xml
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.destination_recycler)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.destination_recycler)
 
         //adding a layoutmanager
-        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(context!!, RecyclerView.HORIZONTAL, false)
 
         //adding some dummy data to the list
-        destinations.add(Destination("Nuevo León","Lorem Ipsum", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("Guadalajara","Lorem Ipsum", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("CDMX","Lorem Ipsum", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("Puebla","Lorem Ipsum", "www.photo.com", 3,"NL"))
+        destinations.add(Destination("Nuevo León","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
+        destinations.add(Destination("Guadalajara","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
+        destinations.add(Destination("CDMX","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
+        destinations.add(Destination("Puebla","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
 
         val adapter = DestinationAdapter(context!!,destinations)
 
         //now adding the adapter to recyclerview
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
-
-        //added touchListener to Recycler
-        recyclerView.addOnItemTouchListener(RecyclerTouchListener(this!!.context, recyclerView, object : ClickListener {
-            override fun onClick(view: View, position: Int) {
-
-            }
-
-            override fun onLongClick(view: View?, position: Int) {
-
-            }
-        }))
 
     }
 
