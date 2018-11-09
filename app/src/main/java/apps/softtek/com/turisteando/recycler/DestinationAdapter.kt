@@ -16,6 +16,13 @@ import androidx.transition.TransitionManager
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Destination
 import com.google.android.material.card.MaterialCardView
+import android.graphics.drawable.ColorDrawable
+import android.R.attr.button
+import com.transitionseverywhere.Recolor
+import android.R.attr.button
+import android.animation.LayoutTransition
+import androidx.transition.Transition
+
 
 class DestinationAdapter (var context: Context,
                   var destinations: List<Destination>) : RecyclerView.Adapter<DestinationAdapter.ViewHolder>() {
@@ -50,33 +57,41 @@ class DestinationAdapter (var context: Context,
             destinationName.text = destination.destinationName
 
             destinationCard.setOnClickListener(){
-                val animator = ObjectAnimator.ofFloat(destinationCard, "cardElevation", 0f, 40f)
+                val animator = ObjectAnimator.ofFloat(destinationCard, "cardElevation", 0f, 35f)
                 val constraintSet = ConstraintSet()
                 constraintSet.clone(destinationRoot)
                 val transition = ChangeBounds()
+                //val recolor = Recolor()
                 transition.setInterpolator(AccelerateDecelerateInterpolator())
                 transition.setDuration(100)
                 TransitionManager.beginDelayedTransition(destinationRoot, transition)
+                //com.transitionseverywhere.TransitionManager.beginDelayedTransition(destinationCard, recolor)
+                destinationCard.setCardBackgroundColor(itemView.context!!.getResources().getColor(R.color.primaryColor));
                 destinationName.setTextColor(itemView.context!!.getResources().getColor(R.color.whiteColor))
                 selectedDestinationDescription.setVisibility(View.VISIBLE)
                 selectedDestinationDescription.text = destination.destinationDescription
                 destinationMinimize.setVisibility(View.VISIBLE)
-                destinationCard.setCardBackgroundColor(itemView.context!!.getResources().getColor(R.color.primaryColor));
                 constraintSet.applyTo(destinationRoot)
                 animator.start()
 
             }
 
             destinationMinimize.setOnClickListener(){
+                val animator = ObjectAnimator.ofFloat(destinationCard, "cardElevation", 35f, 0f)
                 val constraintSet = ConstraintSet()
                 constraintSet.clone(destinationRoot)
                 val transition = ChangeBounds()
+                //val recolor = Recolor()
                 transition.setInterpolator(AccelerateDecelerateInterpolator())
                 transition.setDuration(100)
                 TransitionManager.beginDelayedTransition(destinationRoot, transition)
+                //com.transitionseverywhere.TransitionManager.beginDelayedTransition(destinationCard, recolor)
+                destinationCard.setCardBackgroundColor(itemView.context!!.getResources().getColor(R.color.whiteColor));
+                destinationName.setTextColor(itemView.context!!.getResources().getColor(R.color.primaryColor))
                 selectedDestinationDescription.setVisibility(View.GONE)
                 destinationMinimize.setVisibility(View.GONE)
                 constraintSet.applyTo(destinationRoot)
+                animator.start()
             }
 
         }

@@ -34,6 +34,8 @@ dependencies {
 
     // Material Components
     implementation 'com.google.android.material:material:1.0.0'
+    implementation "com.andkulikov:transitionseverywhere:1.8.0"
+
 
     // Palette
     implementation 'androidx.palette:palette:1.0.0'

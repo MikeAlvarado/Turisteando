@@ -1,20 +1,29 @@
 package apps.softtek.com.turisteando
 
+import android.animation.LayoutTransition
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import apps.softtek.com.turisteando.fragment.AgendaFragment
 import apps.softtek.com.turisteando.fragment.DestinationFragment
+import apps.softtek.com.turisteando.fragment.PlaceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     // Add / replace fragment in container
-    private fun addDestinationFragment(fragment: androidx.fragment.app.Fragment) {
+    private fun addDestinationsFragment(fragment: Fragment){
         supportFragmentManager
                 .beginTransaction()
-                .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
-                .replace(R.id.destination_container, fragment, fragment.javaClass.getSimpleName())
-                .addToBackStack(fragment.javaClass.getSimpleName())
+                .replace(R.id.destination_container, fragment, fragment.javaClass.simpleName)
+                .commit()
+    }
+
+    private fun addPlacesFragment(fragment: Fragment){
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.place_container, fragment, fragment.javaClass.simpleName)
                 .commit()
     }
 
@@ -23,12 +32,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val destinationFragment = DestinationFragment.newInstance()
-        addDestinationFragment(destinationFragment)
+        addDestinationsFragment(destinationFragment)
+
+        val placeFragment = PlaceFragment.newInstance()
+        addPlacesFragment(placeFragment)
+
+        val layout = findViewById(R.id.root) as ViewGroup
+        val layoutTransition = layout.layoutTransition
+        layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+
         showAgendaOnClick()
 
     }
 
-    fun showAgendaOnClick() {
+    private fun showAgendaOnClick() {
         // Fragment OnClick Listener
         agenda_button.setOnClickListener{
             // Load BottomsheetFragment

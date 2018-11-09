@@ -13,14 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:maxWidth="300dp"
+        android:maxWidth="400dp"
         app:cardBackgroundColor="@color/whiteColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
-        app:contentPaddingBottom="24dp"
+        app:contentPaddingBottom="16dp"
         app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,14 +38,16 @@
 
             <TextView
                 android:id="@+id/destination_selected_description"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="19dp"
                 android:fontFamily="@font/google_sans_regular"
+                android:maxWidth="264dp"
                 android:textAlignment="center"
                 android:textColor="@color/whiteColor"
+                android:textSize="12sp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,43 +59,45 @@
                 android:id="@+id/destination_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:fontFamily="@font/product_sans_bold"
                 android:textColor="@color/primaryColor"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Destination" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/destination_minimize"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="2dp"
                 android:visibility="gone"
-                app:cardBackgroundColor="@color/whiteColor"
+                app:cardBackgroundColor="@color/primaryColor"
                 app:cardCornerRadius="24dp"
-                app:cardElevation="2dp"
+                app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/destination_selected_description">
+                app:layout_constraintTop_toBottomOf="@+id/destination_selected_description"
+                app:strokeColor="@color/whiteColor"
+                app:strokeWidth="2dp">
 
                 <ImageView
                     android:id="@+id/destination_minimize_icon"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:layout_gravity="center"
                     android:scaleType="fitXY"
-                    android:tint="@color/primaryColor"
+                    android:tint="@android:color/white"
                     app:srcCompat="@drawable/ic_round_close_24px" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
