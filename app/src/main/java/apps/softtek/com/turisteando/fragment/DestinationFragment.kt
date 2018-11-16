@@ -3,6 +3,7 @@ package apps.softtek.com.turisteando.fragment
 import android.animation.LayoutTransition
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -12,6 +13,10 @@ import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Destination
 import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.DestinationAdapter
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class DestinationFragment : Fragment() {
@@ -91,17 +96,36 @@ class DestinationFragment : Fragment() {
         //adding a layoutmanager
         recyclerView.layoutManager = LinearLayoutManager(context!!, RecyclerView.HORIZONTAL, false)
 
+        val adapter = DestinationAdapter(context!!,destinations)
+        recyclerView.adapter = adapter
+
+        //Instantiation of the Database
+        FirebaseDatabase.getInstance().reference.child("Destino").addValueEventListener(object: ValueEventListener {
+            override fun onCancelled(e: DatabaseError) {
+                Log.d(DestinationFragment::class.java.simpleName, "${e.message} - ${e.toException()}")
+            }
+
+            override fun onDataChange(ds: DataSnapshot) {
+                destinations.clear()
+                ds.children.forEach{ destinoSnapshot->
+                    val destino = destinoSnapshot.getValue(Destination::class.java)
+                    destino?.let { destinations.add(destino) }
+                }
+                adapter.notifyDataSetChanged()
+            }
+        })
+
+
+
         //adding some dummy data to the list
+        /*
         destinations.add(Destination("Nuevo León","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
         destinations.add(Destination("Guadalajara","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
         destinations.add(Destination("CDMX","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
         destinations.add(Destination("Puebla","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-
-        val adapter = DestinationAdapter(context!!,destinations)
+        */
 
         //now adding the adapter to recyclerview
-        recyclerView.adapter = adapter
-        adapter.notifyDataSetChanged()
 
     }
 
