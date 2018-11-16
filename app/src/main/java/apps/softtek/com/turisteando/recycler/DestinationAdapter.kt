@@ -16,12 +16,6 @@ import androidx.transition.TransitionManager
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Destination
 import com.google.android.material.card.MaterialCardView
-import android.graphics.drawable.ColorDrawable
-import android.R.attr.button
-import com.transitionseverywhere.Recolor
-import android.R.attr.button
-import android.animation.LayoutTransition
-import androidx.transition.Transition
 
 
 class DestinationAdapter (var context: Context,
@@ -54,7 +48,7 @@ class DestinationAdapter (var context: Context,
             val selectedDestinationDescription = itemView.findViewById<TextView>(R.id.destination_selected_description)
             val destinationMinimize = itemView.findViewById<CardView>(R.id.destination_minimize)
 
-            destinationName.text = destination.destinationName
+            destinationName.text = destination.DestinationName
 
             destinationCard.setOnClickListener(){
                 val animator = ObjectAnimator.ofFloat(destinationCard, "cardElevation", 0f, 35f)
@@ -69,7 +63,7 @@ class DestinationAdapter (var context: Context,
                 destinationCard.setCardBackgroundColor(itemView.context!!.getResources().getColor(R.color.primaryColor));
                 destinationName.setTextColor(itemView.context!!.getResources().getColor(R.color.whiteColor))
                 selectedDestinationDescription.setVisibility(View.VISIBLE)
-                selectedDestinationDescription.text = destination.destinationDescription
+                selectedDestinationDescription.text = destination.DestinationDescription
                 destinationMinimize.setVisibility(View.VISIBLE)
                 constraintSet.applyTo(destinationRoot)
                 animator.start()

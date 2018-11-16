@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import apps.softtek.com.turisteando.fragment.AgendaFragment
 import apps.softtek.com.turisteando.fragment.DestinationFragment
 import apps.softtek.com.turisteando.fragment.PlaceFragment
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        FirebaseApp.initializeApp(this)
+
         val destinationFragment = DestinationFragment.newInstance()
         addDestinationsFragment(destinationFragment)
 
@@ -53,5 +58,6 @@ class MainActivity : AppCompatActivity() {
             agendaFragment.show(supportFragmentManager, agendaFragment.tag)
         }
     }
+
 
 }
