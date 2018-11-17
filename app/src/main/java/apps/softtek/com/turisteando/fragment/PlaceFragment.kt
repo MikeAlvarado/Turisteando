@@ -88,7 +88,8 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //getting recyclerview from xml
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.place_recycler)
+        //val recyclerView = view?.findViewById<RecyclerView>(R.id.place_recycler)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.place_recycler)
 
         //adding a layoutmanager
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)

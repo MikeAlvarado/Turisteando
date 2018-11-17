@@ -1,6 +1,7 @@
 package apps.softtek.com.turisteando.recycler
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Place
+import java.net.URL
+import android.graphics.BitmapFactory
+import android.widget.ImageView
+import kotlinx.android.synthetic.main.place_item.view.*
 
 
 class PlaceAdapter (var context: Context,
@@ -36,6 +41,11 @@ class PlaceAdapter (var context: Context,
         fun bindItems(place: Place) {
             val placeName = itemView.findViewById<TextView>(R.id.place_name)
             val placeDescription = itemView.findViewById<TextView>(R.id.place_description)
+            /*val placePhoto = itemView.findViewById<ImageView>(R.id.place_image)
+            val url = URL(place.PlacePhoto)
+            val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+            placePhoto.setImageBitmap(bmp)
+            */
 
             placeName.text = place.PlaceName
             placeDescription.text = place.PlaceDescription
