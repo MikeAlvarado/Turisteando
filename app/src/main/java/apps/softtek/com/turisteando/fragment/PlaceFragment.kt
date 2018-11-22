@@ -7,6 +7,9 @@ import android.view.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
+import apps.softtek.com.turisteando.models.App
+import apps.softtek.com.turisteando.models.App.Companion.adapter
+import apps.softtek.com.turisteando.models.App.Companion.places
 import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.PlaceAdapter
 import com.google.firebase.FirebaseApp
@@ -18,10 +21,11 @@ import com.google.firebase.database.ValueEventListener
 
 class PlaceFragment : androidx.fragment.app.Fragment() {
 
-    var currentSelection = "NLE"
-
     companion object {
         fun newInstance(): PlaceFragment {
+
+            // var currentSelection = App.currentSelectionn
+
             var fragmentPlace = PlaceFragment()
             var args = Bundle()
             fragmentPlace.arguments = args
@@ -30,7 +34,7 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
 
     }
 
-    val places = ArrayList<Place>()
+    //val places = ArrayList<Place>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,14 +94,14 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //getting recyclerview from xml
         //val recyclerView = view?.findViewById<RecyclerView>(R.id.place_recycler)
         val recyclerView = view.findViewById<RecyclerView>(R.id.place_recycler)
-
         //adding a layoutmanager
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        val adapter = PlaceAdapter(context!!,places)
+        App.updatePlaces()
+
+        /*val adapter = PlaceAdapter(context!!,places)
 
         FirebaseDatabase.getInstance().reference.child("Lugares").addValueEventListener(object: ValueEventListener {
             override fun onCancelled(e: DatabaseError) {
@@ -109,7 +113,7 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
                 ds.children.forEach{ destinoSnapshot->
                     val lugar = destinoSnapshot.getValue(Place::class.java)
                     lugar?.let {
-                        if (lugar.PlaceParent == currentSelection) {
+                        if (lugar.PlaceParent == App.currentSelectionn) {
                             places.add(lugar)
                         }
 
@@ -117,16 +121,7 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
                 }
                 adapter.notifyDataSetChanged()
             }
-        })
-
-        //adding some dummy data to the list
-        /*
-        places.add(Place("Fundidora","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Santa Lucia","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Chipinque","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Cola de Caballo","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Huasteca","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        */
+        })*/
 
         //now adding the adapter to recyclerview
         recyclerView.adapter = adapter

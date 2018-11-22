@@ -1,18 +1,14 @@
 package apps.softtek.com.turisteando.fragment
 
-import android.animation.LayoutTransition
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.AdapterView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Destination
-import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.DestinationAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -23,10 +19,10 @@ import com.google.firebase.database.ValueEventListener
 class DestinationFragment : Fragment() {
     companion object {
         fun newInstance(): DestinationFragment {
-            var fragmentHome = DestinationFragment()
+            var fragmentDestination = DestinationFragment()
             var args = Bundle()
-            fragmentHome.arguments = args
-            return fragmentHome
+            fragmentDestination.arguments = args
+            return fragmentDestination
         }
 
     }
@@ -88,7 +84,6 @@ class DestinationFragment : Fragment() {
         return rootView
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -100,7 +95,7 @@ class DestinationFragment : Fragment() {
 
         val adapter = DestinationAdapter(context!!,destinations)
         recyclerView.adapter = adapter
-2
+
         //Instantiation of the Database
         FirebaseDatabase.getInstance().reference.child("Destino").addValueEventListener(object: ValueEventListener {
             override fun onCancelled(e: DatabaseError) {
@@ -115,21 +110,7 @@ class DestinationFragment : Fragment() {
                 }
                 adapter.notifyDataSetChanged()
             }
-        }
-        )
-
-
-
-        //adding some dummy data to the list
-        /*
-        destinations.add(Destination("Nuevo León","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("Guadalajara","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("CDMX","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("Puebla","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        */
-
-        //now adding the adapter to recyclerview
-
+        })
     }
 
 }

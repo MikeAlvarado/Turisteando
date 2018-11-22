@@ -2,7 +2,6 @@ package apps.softtek.com.turisteando.recycler
 
 import android.animation.ObjectAnimator
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,14 +10,16 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
+import apps.softtek.com.turisteando.MainActivity
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.fragment.PlaceFragment
+import apps.softtek.com.turisteando.models.App
 import apps.softtek.com.turisteando.models.Destination
 import com.google.android.material.card.MaterialCardView
-
 
 class DestinationAdapter (var context: Context,
                   var destinations: List<Destination>) : RecyclerView.Adapter<DestinationAdapter.ViewHolder>() {
@@ -41,11 +42,8 @@ class DestinationAdapter (var context: Context,
         return destinations.size
     }
 
-
-
     //the class is hodling the list view
     public class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
 
         fun bindItems(destination: Destination) {
             val destinationName = itemView.findViewById<TextView>(R.id.destination_name)
@@ -74,9 +72,15 @@ class DestinationAdapter (var context: Context,
                 constraintSet.applyTo(destinationRoot)
                 animator.start()
 
+                var selection = destinationName.text.toString()
+                App.currentSelectionn = selection
+
+                App.updatePlaces()
+
             }
 
             destinationMinimize.setOnClickListener(){
+                /*
                 val animator = ObjectAnimator.ofFloat(destinationCard, "cardElevation", 35f, 0f)
                 val constraintSet = ConstraintSet()
                 constraintSet.clone(destinationRoot)
@@ -92,9 +96,11 @@ class DestinationAdapter (var context: Context,
                 destinationMinimize.setVisibility(View.GONE)
                 constraintSet.applyTo(destinationRoot)
                 animator.start()
+                */
             }
 
         }
     }
 
 }
+
