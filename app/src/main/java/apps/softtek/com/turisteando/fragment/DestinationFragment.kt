@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
+import apps.softtek.com.turisteando.models.App
 import apps.softtek.com.turisteando.models.Destination
+import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.DestinationAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -93,7 +95,14 @@ class DestinationFragment : Fragment() {
         //adding a layoutmanager
         recyclerView.layoutManager = LinearLayoutManager(context!!, RecyclerView.HORIZONTAL, false)
 
-        val adapter = DestinationAdapter(context!!,destinations)
+        val bus = (requireContext().applicationContext as App).getDestinationBus()
+        val destinationSelectedListener = object : DestinationAdapter.OnDestinationSelected {
+            override fun onSelected(destination: String) {
+
+            }
+        }
+
+        val adapter = DestinationAdapter(context!!,destinations, destinationSelectedListener, bus)
         recyclerView.adapter = adapter
 
         //Instantiation of the Database
