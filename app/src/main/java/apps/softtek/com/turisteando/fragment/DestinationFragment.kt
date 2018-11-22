@@ -1,15 +1,14 @@
 package apps.softtek.com.turisteando.fragment
 
-import android.animation.LayoutTransition
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
+import apps.softtek.com.turisteando.models.App
 import apps.softtek.com.turisteando.models.Destination
 import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.DestinationAdapter
@@ -22,10 +21,10 @@ import com.google.firebase.database.ValueEventListener
 class DestinationFragment : Fragment() {
     companion object {
         fun newInstance(): DestinationFragment {
-            var fragmentHome = DestinationFragment()
+            var fragmentDestination = DestinationFragment()
             var args = Bundle()
-            fragmentHome.arguments = args
-            return fragmentHome
+            fragmentDestination.arguments = args
+            return fragmentDestination
         }
 
     }
@@ -96,7 +95,14 @@ class DestinationFragment : Fragment() {
         //adding a layoutmanager
         recyclerView.layoutManager = LinearLayoutManager(context!!, RecyclerView.HORIZONTAL, false)
 
-        val adapter = DestinationAdapter(context!!,destinations)
+        val bus = (requireContext().applicationContext as App).getDestinationBus()
+        val destinationSelectedListener = object : DestinationAdapter.OnDestinationSelected {
+            override fun onSelected(destination: String) {
+
+            }
+        }
+
+        val adapter = DestinationAdapter(context!!,destinations, destinationSelectedListener, bus)
         recyclerView.adapter = adapter
 
         //Instantiation of the Database
@@ -114,19 +120,6 @@ class DestinationFragment : Fragment() {
                 adapter.notifyDataSetChanged()
             }
         })
-
-
-
-        //adding some dummy data to the list
-        /*
-        destinations.add(Destination("Nuevo León","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("Guadalajara","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("CDMX","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        destinations.add(Destination("Puebla","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "www.photo.com", 3,"NL"))
-        */
-
-        //now adding the adapter to recyclerview
-
     }
 
 }

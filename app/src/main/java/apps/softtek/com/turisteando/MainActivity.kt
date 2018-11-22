@@ -58,6 +58,4 @@ class MainActivity : AppCompatActivity() {
             agendaFragment.show(supportFragmentManager, agendaFragment.tag)
         }
     }
-
-
 }

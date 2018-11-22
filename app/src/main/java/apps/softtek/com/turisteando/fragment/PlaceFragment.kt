@@ -7,18 +7,22 @@ import android.view.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
+import apps.softtek.com.turisteando.models.App
 import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.PlaceAdapter
-import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import io.reactivex.disposables.CompositeDisposable
 
 
 class PlaceFragment : androidx.fragment.app.Fragment() {
+
     companion object {
         fun newInstance(): PlaceFragment {
+            // var currentSelection = App.currentSelectionn
+
             var fragmentPlace = PlaceFragment()
             var args = Bundle()
             fragmentPlace.arguments = args
@@ -27,55 +31,15 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
 
     }
 
-    val places = ArrayList<Place>()
+    //val places = ArrayList<Place>()
+
+    private val disposable = CompositeDisposable()
+    private val places = mutableListOf<Place>()
+    private lateinit var adapter: PlaceAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    }
-
-    interface ClickListener {
-        fun onClick(view: View, position: Int)
-
-        fun onLongClick(view: View?, position: Int)
-    }
-
-    internal class RecyclerTouchListener(context: Context?, recyclerView: RecyclerView, private val clickListener: ClickListener?) : RecyclerView.OnItemTouchListener {
-
-        private val gestureDetector: GestureDetector
-
-        init {
-            gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-                override fun onSingleTapUp(e: MotionEvent): Boolean {
-                    return true
-                }
-
-                override fun onLongPress(e: MotionEvent) {
-                    val child = recyclerView.findChildViewUnder(e.x, e.y)
-                    if (child != null && clickListener != null) {
-                        clickListener.onLongClick(child, recyclerView.getChildPosition(child))
-                    }
-                }
-            })
-        }
-
-        override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
-
-            val child = rv.findChildViewUnder(e.x, e.y)
-            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-                clickListener.onClick(child, rv.getChildPosition(child))
-
-            }
-            return false
-        }
-
-        override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
-
-        }
-
-        override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
-
-        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -87,14 +51,39 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //getting recyclerview from xml
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.place_recycler)
-
+        //val recyclerView = view?.findViewById<RecyclerView>(R.id.place_recycler)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.place_recycler)
         //adding a layoutmanager
-        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false) as RecyclerView.LayoutManager?
 
-        val adapter = PlaceAdapter(context!!,places)
+        //App.updatePlaces()
 
+
+        adapter = PlaceAdapter(requireContext(), places, object : PlaceAdapter.OnPlaceSelected {
+            override fun onSelected() {
+                // Load BottomsheetFragment
+                val placeDetailFragment = PlaceDetailFragment()
+                placeDetailFragment.show(requireFragmentManager(), placeDetailFragment.tag)
+            }
+        })
+
+        //now adding the adapter to recyclerview
+        recyclerView.adapter = adapter
+
+        disposable.add((requireContext().applicationContext as App).getDestinationBus()
+                .getChanges()
+                .subscribe(this::updatePlaces)
+        )
+
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        disposable.clear()
+    }
+
+    private fun updatePlaces(destination: String) {
         FirebaseDatabase.getInstance().reference.child("Lugares").addValueEventListener(object: ValueEventListener {
             override fun onCancelled(e: DatabaseError) {
                 Log.d(DestinationFragment::class.java.simpleName, "${e.message} - ${e.toException()}")
@@ -104,36 +93,16 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
                 places.clear()
                 ds.children.forEach{ destinoSnapshot->
                     val lugar = destinoSnapshot.getValue(Place::class.java)
-                    lugar?.let { places.add(lugar) }
+                    lugar?.let {
+                        if (lugar.PlaceParent == destination) {
+                            places.add(lugar)
+                        }
+
+                    }
                 }
                 adapter.notifyDataSetChanged()
             }
         })
-
-        //adding some dummy data to the list
-        /*
-        places.add(Place("Fundidora","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Santa Lucia","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Chipinque","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Cola de Caballo","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        places.add(Place("Huasteca","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "www.photo.com", "placeID"))
-        */
-
-        //now adding the adapter to recyclerview
-        recyclerView.adapter = adapter
-        adapter.notifyDataSetChanged()
-
-        //added touchListener to Recycler
-        recyclerView.addOnItemTouchListener(RecyclerTouchListener(this!!.context, recyclerView, object : ClickListener {
-            override fun onClick(view: View, position: Int) {
-
-            }
-
-            override fun onLongClick(view: View?, position: Int) {
-
-            }
-        }))
-
     }
 
 }
