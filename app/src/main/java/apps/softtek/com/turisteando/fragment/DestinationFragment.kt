@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -87,6 +88,7 @@ class DestinationFragment : Fragment() {
         return rootView
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -98,7 +100,7 @@ class DestinationFragment : Fragment() {
 
         val adapter = DestinationAdapter(context!!,destinations)
         recyclerView.adapter = adapter
-
+2
         //Instantiation of the Database
         FirebaseDatabase.getInstance().reference.child("Destino").addValueEventListener(object: ValueEventListener {
             override fun onCancelled(e: DatabaseError) {
@@ -113,7 +115,8 @@ class DestinationFragment : Fragment() {
                 }
                 adapter.notifyDataSetChanged()
             }
-        })
+        }
+        )
 
 
 

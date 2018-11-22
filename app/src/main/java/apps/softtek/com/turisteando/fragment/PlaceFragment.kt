@@ -17,6 +17,9 @@ import com.google.firebase.database.ValueEventListener
 
 
 class PlaceFragment : androidx.fragment.app.Fragment() {
+
+    var currentSelection = "NLE"
+
     companion object {
         fun newInstance(): PlaceFragment {
             var fragmentPlace = PlaceFragment()
@@ -105,7 +108,12 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
                 places.clear()
                 ds.children.forEach{ destinoSnapshot->
                     val lugar = destinoSnapshot.getValue(Place::class.java)
-                    lugar?.let { places.add(lugar) }
+                    lugar?.let {
+                        if (lugar.PlaceParent == currentSelection) {
+                            places.add(lugar)
+                        }
+
+                    }
                 }
                 adapter.notifyDataSetChanged()
             }

@@ -12,8 +12,9 @@ import apps.softtek.com.turisteando.models.Place
 import java.net.URL
 import android.graphics.BitmapFactory
 import android.widget.ImageView
+import apps.softtek.com.turisteando.MainActivity
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.place_item.view.*
-
 
 class PlaceAdapter (var context: Context,
                     var places: List<Place>) : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
@@ -41,14 +42,13 @@ class PlaceAdapter (var context: Context,
         fun bindItems(place: Place) {
             val placeName = itemView.findViewById<TextView>(R.id.place_name)
             val placeDescription = itemView.findViewById<TextView>(R.id.place_description)
-            /*val placePhoto = itemView.findViewById<ImageView>(R.id.place_image)
-            val url = URL(place.PlacePhoto)
-            val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
-            placePhoto.setImageBitmap(bmp)
-            */
+
+            val placePhoto = itemView.findViewById<ImageView>(R.id.place_image)
 
             placeName.text = place.PlaceName
             placeDescription.text = place.PlaceDescription
+
+            Glide.with(itemView.context).load("https://vivaaguascalientes.com/wp-content/uploads/2016/02/jardin-de-san-marcos.jpg").into(placePhoto)
 
         }
     }

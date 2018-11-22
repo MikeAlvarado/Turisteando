@@ -2,6 +2,7 @@ package apps.softtek.com.turisteando.recycler
 
 import android.animation.ObjectAnimator
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import apps.softtek.com.turisteando.R
+import apps.softtek.com.turisteando.fragment.PlaceFragment
 import apps.softtek.com.turisteando.models.Destination
 import com.google.android.material.card.MaterialCardView
 
@@ -39,8 +41,12 @@ class DestinationAdapter (var context: Context,
         return destinations.size
     }
 
+
+
     //the class is hodling the list view
     public class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+
         fun bindItems(destination: Destination) {
             val destinationName = itemView.findViewById<TextView>(R.id.destination_name)
             val destinationRoot = itemView.findViewById<ConstraintLayout>(R.id.destination_root)
