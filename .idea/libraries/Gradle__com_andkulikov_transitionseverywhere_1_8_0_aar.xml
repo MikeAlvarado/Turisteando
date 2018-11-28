@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.andkulikov:transitionseverywhere:1.8.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-transitionseverywhere-1.8.0.aar/e0b4c667ec88588bad42a9c330d84fb6/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-transitionseverywhere-1.8.0.aar/d01688b9da968d18b573789f8dd5ffc1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-transitionseverywhere-1.8.0.aar/e0b4c667ec88588bad42a9c330d84fb6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-transitionseverywhere-1.8.0.aar/e0b4c667ec88588bad42a9c330d84fb6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-transitionseverywhere-1.8.0.aar/d01688b9da968d18b573789f8dd5ffc1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-transitionseverywhere-1.8.0.aar/d01688b9da968d18b573789f8dd5ffc1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
