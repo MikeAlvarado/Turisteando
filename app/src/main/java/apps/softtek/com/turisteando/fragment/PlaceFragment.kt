@@ -3,12 +3,14 @@ package apps.softtek.com.turisteando.fragment
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.App
 import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.recycler.PlaceAdapter
+import com.google.android.material.card.MaterialCardView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -105,6 +107,13 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
                 adapter.notifyDataSetChanged()
             }
         })
+
+        val hideCardView = view!!.findViewById<MaterialCardView>(R.id.sun_card)
+        val hideDestinationHint = view!!.findViewById<TextView>(R.id.destination_hint)
+
+        hideCardView.setVisibility(View.GONE)
+        hideDestinationHint.setVisibility(View.GONE)
+
     }
 
 }
