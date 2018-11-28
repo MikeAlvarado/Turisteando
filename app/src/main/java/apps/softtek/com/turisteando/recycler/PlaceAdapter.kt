@@ -32,7 +32,7 @@ class PlaceAdapter (var context: Context,
     }
 
     interface OnPlaceSelected {
-        fun onSelected(placeName: String)
+        fun onSelected(placeName: String, placeDescription: String)
     }
 
     //the class is hodling the list view
@@ -47,7 +47,7 @@ class PlaceAdapter (var context: Context,
             placeDescription.text = place.PlaceDescription
 
             detailsButton.setOnClickListener {
-                listener.onSelected(place.PlaceName)
+                listener.onSelected(place.PlaceName, place.PlaceDescription)
 
             }
 

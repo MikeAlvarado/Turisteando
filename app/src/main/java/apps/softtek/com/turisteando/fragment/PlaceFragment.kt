@@ -58,10 +58,11 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
         //App.updatePlaces()
 
         adapter = PlaceAdapter(requireContext(), places, object : PlaceAdapter.OnPlaceSelected {
-            override fun onSelected(placeName: String) {
+            override fun onSelected(placeName: String, placeDescription: String) {
                 // Load BottomsheetFragment
                 val bundle = Bundle()
                 bundle.putString("placeName", placeName) //key and value
+                bundle.putString("placeDescription", placeDescription)
                 val placeDetailFragment = PlaceDetailFragment()
                 placeDetailFragment.setArguments(bundle)
                 placeDetailFragment.show(requireFragmentManager(), placeDetailFragment.tag)

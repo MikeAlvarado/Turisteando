@@ -16,13 +16,14 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_place_detail.*
 
 
 class PlaceDetailFragment: BottomSheetDialogFragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var placeName = getArguments()!!.getInt("placeName")
+
 
         return inflater.inflate(R.layout.fragment_place_detail, container, false)
     }
@@ -31,6 +32,12 @@ class PlaceDetailFragment: BottomSheetDialogFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        var placeName = getArguments()!!.getString("placeName")
+        var placeDescription = getArguments()!!.getString("placeDescription")
+
+        place_name.text = placeName
+        place_description.text = placeDescription
 
         //getting recyclerview from xml
         val recyclerView = view!!.findViewById<RecyclerView>(R.id.promos_recycler)
