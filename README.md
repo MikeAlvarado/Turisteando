@@ -43,12 +43,12 @@ Comunicación con Buses de Datos
 Base de datos con FireBase
 
 ### Versión
-Versión: 0.18.3
+Versión: 0.18.4
 Fecha de última actualización: 28 Noviembre 2018
 
 ### Desarrolladores:
 
-| DreamTeamMX |
+| Nombre  | Correo electrónico |
 | ------------- | ------------- |
 | Miguel  Alvarado | A01400121@itesm.mx |
 | Ricardo Trevizo | A01196062@itesm.mx |
@@ -62,9 +62,10 @@ Fecha de última actualización: 28 Noviembre 2018
 
 ### Cliente:
 
-| Transpais |
+| Nombre  | Email |
 | ------------- | ------------- |
-| Juan Victor Castillo |
+| Juan Victor Castillo | - |
+
 
 ### Institución
 
