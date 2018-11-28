@@ -1,7 +1,6 @@
 package apps.softtek.com.turisteando.recycler
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Place
-import java.net.URL
-import android.graphics.BitmapFactory
-import android.widget.ImageView
-import apps.softtek.com.turisteando.MainActivity
-import apps.softtek.com.turisteando.fragment.AgendaFragment
-import apps.softtek.com.turisteando.fragment.PlaceDetailFragment
-import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
-import kotlinx.android.synthetic.main.place_item.view.*
 
 class PlaceAdapter (var context: Context,
                     var places: List<Place>, var listener: OnPlaceSelected) : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
@@ -41,7 +32,7 @@ class PlaceAdapter (var context: Context,
     }
 
     interface OnPlaceSelected {
-        fun onSelected()
+        fun onSelected(placeName: String)
     }
 
     //the class is hodling the list view
@@ -56,7 +47,8 @@ class PlaceAdapter (var context: Context,
             placeDescription.text = place.PlaceDescription
 
             detailsButton.setOnClickListener {
-                listener.onSelected()
+                listener.onSelected(place.PlaceName)
+
             }
 
         }

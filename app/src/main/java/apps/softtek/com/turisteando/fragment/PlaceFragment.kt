@@ -1,6 +1,5 @@
 package apps.softtek.com.turisteando.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -58,11 +57,13 @@ class PlaceFragment : androidx.fragment.app.Fragment() {
 
         //App.updatePlaces()
 
-
         adapter = PlaceAdapter(requireContext(), places, object : PlaceAdapter.OnPlaceSelected {
-            override fun onSelected() {
+            override fun onSelected(placeName: String) {
                 // Load BottomsheetFragment
+                val bundle = Bundle()
+                bundle.putString("placeName", placeName) //key and value
                 val placeDetailFragment = PlaceDetailFragment()
+                placeDetailFragment.setArguments(bundle)
                 placeDetailFragment.show(requireFragmentManager(), placeDetailFragment.tag)
             }
         })

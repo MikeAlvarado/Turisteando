@@ -19,7 +19,11 @@ import com.google.firebase.database.ValueEventListener
 
 
 class PlaceDetailFragment: BottomSheetDialogFragment() {
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        var placeName = getArguments()!!.getInt("placeName")
+
         return inflater.inflate(R.layout.fragment_place_detail, container, false)
     }
 
@@ -48,7 +52,8 @@ class PlaceDetailFragment: BottomSheetDialogFragment() {
                 ds.children.forEach{ promosSnapshot->
                     val promo = promosSnapshot.getValue(Promo::class.java)
                     promo?.let {
-                        if (promo.PromoParent == "Santa Lucia") {
+                        var placeName = getArguments()!!.getString("placeName")
+                        if (promo.PromoParent == placeName) {
                             promos.add(promo)
                         }
 
