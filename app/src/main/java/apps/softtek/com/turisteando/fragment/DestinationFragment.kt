@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -104,6 +105,25 @@ class DestinationFragment : Fragment() {
 
         val adapter = DestinationAdapter(context!!,destinations, destinationSelectedListener, bus)
         recyclerView.adapter = adapter
+
+        var connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected")
+        connectedRef.addValueEventListener(object: ValueEventListener {
+
+
+            override fun onCancelled(e: DatabaseError) {
+                Log.d(DestinationFragment::class.java.simpleName, "${e.message} - ${e.toException()}")
+            }
+
+            override fun onDataChange(ds: DataSnapshot) {
+                var connected : Boolean = ds.getValue() as Boolean
+                if (connected) {
+                    Toast.makeText(context,"Connected to the Database",Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context,"Cannot connect to the Database",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        })
 
         //Instantiation of the Database
         FirebaseDatabase.getInstance().reference.child("Destino").addValueEventListener(object: ValueEventListener {
