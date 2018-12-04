@@ -4,10 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Place
+import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
 
 class PlaceAdapter (var context: Context,
@@ -24,6 +26,9 @@ class PlaceAdapter (var context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(places[position], listener)
 
+        var url : String = places.get(position).PlacePhoto
+        Glide.with(context!!).load(url).into(holder.image)
+
     }
 
     //this method is giving the size of the list
@@ -37,11 +42,14 @@ class PlaceAdapter (var context: Context,
 
     //the class is hodling the list view
     public class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var image = itemView.findViewById<ImageView>(R.id.place_image)
+
         fun bindItems(place: Place, listener: OnPlaceSelected) {
             val placeName = itemView.findViewById<TextView>(R.id.place_name)
             val placeDescription = itemView.findViewById<TextView>(R.id.place_description)
-            //val placePhoto = itemView.findViewById<ImageView>(R.id.place_image)
             val detailsButton = itemView.findViewById<MaterialButton>(R.id.detail_button)
+
+            image = itemView.findViewById<ImageView>(R.id.place_image)
 
             placeName.text = place.PlaceName
             placeDescription.text = place.PlaceDescription
