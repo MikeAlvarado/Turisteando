@@ -10,10 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="534c26ed-287e-4194-8f96-f9347f34a52d" name="Default Changelist" comment="ase.">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/DestinationBus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/DestinationBus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/PlaceBus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/PlaceBus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/AgendaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/AgendaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceDetailFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_place_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_place_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/AgendaAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/AgendaAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/DestinationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/DestinationAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PromoAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PromoAdapter.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,28 +70,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="kt" value="20" />
+          <entry key="kt" value="37" />
           <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="Kotlin" value="20" />
+          <entry key="Kotlin" value="37" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="50" />
-          <entry key="kt" value="1552" />
+          <entry key="kt" value="1624" />
           <entry key="txt" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="50" />
-          <entry key="Kotlin" value="1552" />
+          <entry key="Kotlin" value="1624" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -86,32 +99,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceDetailFragment.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/App.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+            <state relative-caret-position="30">
+              <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/agenda_item.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/User.kt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_place_detail.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/AgendaAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="119" column="28" selection-start-line="119" selection-end-line="120" />
+            <state relative-caret-position="390">
+              <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/DestinationAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+              <folding>
+                <element signature="e#47#1020#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PromoAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/DestinationBus.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/PlaceBus.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/Destination.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -130,6 +202,7 @@
       <find>glide</find>
       <find>toast</find>
       <find>Toas</find>
+      <find>Cannot</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app</dir>
@@ -2616,21 +2689,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/AgendaFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/place_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_place.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_place_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/AgendaFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceDetailFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/App.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/AgendaAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/DestinationAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PromoAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/DestinationBus.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/PlaceBus.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1209" />
     <option name="height" value="947" />
@@ -2713,7 +2793,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="ce081718211478c10c7e" />
+    <property name="device.picker.selection" value="a2da947e" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1543642711103" />
@@ -2814,10 +2894,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1209" height="947" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="946" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15081406" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.10744811" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -2832,7 +2913,7 @@
       <window_info anchor="bottom" id="Build" order="5" sideWeight="0.4993895" weight="0.32982457" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" visible="true" weight="0.32982457" />
+      <window_info anchor="bottom" id="Debug" order="8" visible="true" weight="0.33021078" />
       <window_info anchor="bottom" id="Find" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32967034" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -2849,7 +2930,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt</url>
-          <line>46</line>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -2882,81 +2963,9 @@
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/PlaceBus.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/DestinationBus.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/AgendaFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="32" column="61" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="61" />
-          <folding>
-            <element signature="e#47#885#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PromoAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/DestinationAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding>
-            <element signature="e#47#1020#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/AgendaAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="42" column="44" selection-start-line="42" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#47#391#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_destination.xml">
       <provider selected="true" editor-type-id="android-designer2" />
@@ -2970,21 +2979,107 @@
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="119" column="28" selection-start-line="119" selection-end-line="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_place_detail.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/AgendaFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+          <folding>
+            <element signature="e#47#885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/DestinationFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceDetailFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+        <state relative-caret-position="390">
+          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/fragment/PlaceFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/Destination.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/App.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/models/User.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/AgendaAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/DestinationAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+          <folding>
+            <element signature="e#47#1020#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PlaceAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/recycler/PromoAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/DestinationBus.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/apps/softtek/com/turisteando/PlaceBus.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
         </state>
       </provider>
     </entry>
