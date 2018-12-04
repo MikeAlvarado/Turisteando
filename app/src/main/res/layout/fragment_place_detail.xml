@@ -26,7 +26,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/place_image_card"
                 android:layout_width="match_parent"
-                android:layout_height="162dp"
+                android:layout_height="256dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -41,8 +41,9 @@
                     android:id="@+id/place_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxHeight="150dp"
                     android:scaleType="centerCrop"
-                    android:visibility="invisible"
+                    android:visibility="visible"
                     tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
             </androidx.cardview.widget.CardView>
 
@@ -118,7 +119,7 @@
                         app:rippleColor="@color/primaryColor" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/promo_call_button2"
+                        android:id="@+id/promo_agenda_button"
                         style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"
                         android:layout_width="0dp"
                         android:layout_height="42dp"
