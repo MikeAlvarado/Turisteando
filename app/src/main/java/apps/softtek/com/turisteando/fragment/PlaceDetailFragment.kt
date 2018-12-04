@@ -5,12 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
 import apps.softtek.com.turisteando.models.Place
 import apps.softtek.com.turisteando.models.Promo
 import apps.softtek.com.turisteando.recycler.PromoAdapter
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -35,9 +37,14 @@ class PlaceDetailFragment: BottomSheetDialogFragment() {
 
         var placeName = getArguments()!!.getString("placeName")
         var placeDescription = getArguments()!!.getString("placeDescription")
+        var placePhoto = getArguments()!!.getString("placePhoto")
+        val placeImageView = view!!.findViewById<ImageView>(R.id.place_image)
+
 
         place_name.text = placeName
         place_description.text = placeDescription
+        Glide.with(context!!).load(placePhoto).into(placeImageView)
+
 
         //getting recyclerview from xml
         val recyclerView = view!!.findViewById<RecyclerView>(R.id.promos_recycler)

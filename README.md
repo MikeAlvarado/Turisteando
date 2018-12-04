@@ -18,7 +18,7 @@ Comunicación con Buses de Datos
 Base de datos con FireBase
 
 ### Versión
-Versión: 0.2.6.28  
+Versión: 0.2.6.29  
 Fecha de última actualización: 28 Noviembre 2018
 
 ### Desarrolladores:
