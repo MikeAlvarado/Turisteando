@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.softtek.com.turisteando.R
@@ -76,6 +77,14 @@ class PlaceDetailFragment: BottomSheetDialogFragment() {
                 adapter.notifyDataSetChanged()
             }
         })
+
+        promo_call_button.setOnClickListener{
+            Toast.makeText(context, "Disabled", Toast.LENGTH_SHORT).show()
+        }
+
+        promo_agenda_button.setOnClickListener{
+            Toast.makeText(context, "Disabled", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

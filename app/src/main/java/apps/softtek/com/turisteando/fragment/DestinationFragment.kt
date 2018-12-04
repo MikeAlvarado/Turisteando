@@ -119,7 +119,7 @@ class DestinationFragment : Fragment() {
                 if (connected) {
                     Toast.makeText(context,"Connected to the Database",Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(context,"Cannot connect to the Database",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,"Connecting to Database",Toast.LENGTH_SHORT).show()
                 }
             }
 

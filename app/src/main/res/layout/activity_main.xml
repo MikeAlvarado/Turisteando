@@ -39,6 +39,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="12dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/agenda_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/agenda_button"
